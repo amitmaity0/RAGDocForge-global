@@ -1,0 +1,331 @@
+{
+  "reports": [
+    {
+      "doc_id": "sample_gl_journal_import_sop",
+      "source_file": "sample_gl_journal_import_sop.md",
+      "raw_score": 92,
+      "overall_score": 92,
+      "readiness_level": "EXCELLENT",
+      "dimensions": [
+        {
+          "name": "Metadata completeness",
+          "score": 5,
+          "max_score": 5,
+          "explanation": "ERP module, document type, and business process metadata improve retrieval filters."
+        },
+        {
+          "name": "Chunkability",
+          "score": 5,
+          "max_score": 5,
+          "explanation": "Heading structure, paragraph shape, and section size support deterministic chunk boundaries."
+        },
+        {
+          "name": "Retrieval specificity",
+          "score": 5,
+          "max_score": 5,
+          "explanation": "Oracle objects, errors, parameters, process terms, and concurrent programs provide query anchors."
+        },
+        {
+          "name": "Operational usefulness",
+          "score": 5,
+          "max_score": 5,
+          "explanation": "Actionable steps, diagnostics, expected results, validation, and troubleshooting details matter for support use."
+        },
+        {
+          "name": "Grounding quality",
+          "score": 4,
+          "max_score": 5,
+          "explanation": "Source filename, section names, examples, SQL snippets, and navigation cues improve answer grounding."
+        },
+        {
+          "name": "Procedure completeness",
+          "score": 5,
+          "max_score": 5,
+          "explanation": "Missing required sections reduce answer completeness."
+        },
+        {
+          "name": "SQL safety and context",
+          "score": 3,
+          "max_score": 5,
+          "explanation": "SQL should include purpose, bind parameters, risk notes, and expected output interpretation."
+        },
+        {
+          "name": "Ambiguity risk",
+          "score": 5,
+          "max_score": 5,
+          "explanation": "Clear title, module, audience, process, and specific references reduce ambiguity."
+        }
+      ],
+      "strengths": [
+        "Contains extractable section headings.",
+        "Includes Oracle object names useful for retrieval.",
+        "Includes explicit error messages."
+      ],
+      "blocking_issues": [],
+      "warnings": [],
+      "recommended_actions": [
+        "Add error-message variants users may search for.",
+        "Add a table/view glossary."
+      ],
+      "missing_sections": [],
+      "score_cap_reasons": [],
+      "final_score": 92
+    },
+    {
+      "doc_id": "sample_gl_diagnostic_sql",
+      "source_file": "sample_gl_diagnostic_sql.sql",
+      "raw_score": 62,
+      "overall_score": 62,
+      "readiness_level": "NEEDS_IMPROVEMENT",
+      "dimensions": [
+        {
+          "name": "Metadata completeness",
+          "score": 5,
+          "max_score": 5,
+          "explanation": "ERP module, document type, and business process metadata improve retrieval filters."
+        },
+        {
+          "name": "Chunkability",
+          "score": 2,
+          "max_score": 5,
+          "explanation": "Heading structure, paragraph shape, and section size support deterministic chunk boundaries."
+        },
+        {
+          "name": "Retrieval specificity",
+          "score": 4,
+          "max_score": 5,
+          "explanation": "Oracle objects, errors, parameters, process terms, and concurrent programs provide query anchors."
+        },
+        {
+          "name": "Operational usefulness",
+          "score": 1,
+          "max_score": 5,
+          "explanation": "Actionable steps, diagnostics, expected results, validation, and troubleshooting details matter for support use."
+        },
+        {
+          "name": "Grounding quality",
+          "score": 2,
+          "max_score": 5,
+          "explanation": "Source filename, section names, examples, SQL snippets, and navigation cues improve answer grounding."
+        },
+        {
+          "name": "Procedure completeness",
+          "score": 1,
+          "max_score": 5,
+          "explanation": "Missing required sections reduce answer completeness."
+        },
+        {
+          "name": "SQL safety and context",
+          "score": 5,
+          "max_score": 5,
+          "explanation": "SQL should include purpose, bind parameters, risk notes, and expected output interpretation."
+        },
+        {
+          "name": "Ambiguity risk",
+          "score": 5,
+          "max_score": 5,
+          "explanation": "Clear title, module, audience, process, and specific references reduce ambiguity."
+        }
+      ],
+      "strengths": [
+        "Includes Oracle object names useful for retrieval."
+      ],
+      "blocking_issues": [
+        "Missing required sections: Purpose, Parameters, Expected Result, Safety Notes"
+      ],
+      "warnings": [
+        "Quality score was capped because blocking issues or metadata quality problems were detected."
+      ],
+      "recommended_actions": [
+        "Add a Purpose section.",
+        "Add a Parameters section.",
+        "Add a Expected Result section.",
+        "Add a Safety Notes section.",
+        "Document SQL purpose, bind parameters, expected output, and safety classification.",
+        "Add a table/view glossary."
+      ],
+      "missing_sections": [
+        "Purpose",
+        "Parameters",
+        "Expected Result",
+        "Safety Notes"
+      ],
+      "score_cap_reasons": [
+        "Blocking issues detected; maximum score capped at 74."
+      ],
+      "final_score": 62
+    },
+    {
+      "doc_id": "sample_custom_plsql_package",
+      "source_file": "sample_custom_plsql_package.pks",
+      "raw_score": 45,
+      "overall_score": 45,
+      "readiness_level": "POOR",
+      "dimensions": [
+        {
+          "name": "Metadata completeness",
+          "score": 5,
+          "max_score": 5,
+          "explanation": "ERP module, document type, and business process metadata improve retrieval filters."
+        },
+        {
+          "name": "Chunkability",
+          "score": 2,
+          "max_score": 5,
+          "explanation": "Heading structure, paragraph shape, and section size support deterministic chunk boundaries."
+        },
+        {
+          "name": "Retrieval specificity",
+          "score": 4,
+          "max_score": 5,
+          "explanation": "Oracle objects, errors, parameters, process terms, and concurrent programs provide query anchors."
+        },
+        {
+          "name": "Operational usefulness",
+          "score": 0,
+          "max_score": 5,
+          "explanation": "Actionable steps, diagnostics, expected results, validation, and troubleshooting details matter for support use."
+        },
+        {
+          "name": "Grounding quality",
+          "score": 1,
+          "max_score": 5,
+          "explanation": "Source filename, section names, examples, SQL snippets, and navigation cues improve answer grounding."
+        },
+        {
+          "name": "Procedure completeness",
+          "score": 1,
+          "max_score": 5,
+          "explanation": "Missing required sections reduce answer completeness."
+        },
+        {
+          "name": "SQL safety and context",
+          "score": 0,
+          "max_score": 5,
+          "explanation": "SQL should include purpose, bind parameters, risk notes, and expected output interpretation."
+        },
+        {
+          "name": "Ambiguity risk",
+          "score": 5,
+          "max_score": 5,
+          "explanation": "Clear title, module, audience, process, and specific references reduce ambiguity."
+        }
+      ],
+      "strengths": [
+        "Includes Oracle object names useful for retrieval."
+      ],
+      "blocking_issues": [
+        "Missing required sections: Purpose, Package, Procedure, Error Handling, Validation"
+      ],
+      "warnings": [
+        "Potentially risky SQL statement detected: CREATE",
+        "Quality score was capped because blocking issues or metadata quality problems were detected."
+      ],
+      "recommended_actions": [
+        "Add a Purpose section.",
+        "Add a Package section.",
+        "Add a Procedure section.",
+        "Add a Error Handling section.",
+        "Add a Validation section.",
+        "Document SQL purpose, bind parameters, expected output, and safety classification."
+      ],
+      "missing_sections": [
+        "Purpose",
+        "Package",
+        "Procedure",
+        "Error Handling",
+        "Validation"
+      ],
+      "score_cap_reasons": [
+        "Blocking issues detected; maximum score capped at 74.",
+        "SQL safety/context is very low; maximum score capped at 69."
+      ],
+      "final_score": 45
+    },
+    {
+      "doc_id": "sample_low_quality_note",
+      "source_file": "sample_low_quality_note.txt",
+      "raw_score": 48,
+      "overall_score": 48,
+      "readiness_level": "POOR",
+      "dimensions": [
+        {
+          "name": "Metadata completeness",
+          "score": 5,
+          "max_score": 5,
+          "explanation": "ERP module, document type, and business process metadata improve retrieval filters."
+        },
+        {
+          "name": "Chunkability",
+          "score": 2,
+          "max_score": 5,
+          "explanation": "Heading structure, paragraph shape, and section size support deterministic chunk boundaries."
+        },
+        {
+          "name": "Retrieval specificity",
+          "score": 2,
+          "max_score": 5,
+          "explanation": "Oracle objects, errors, parameters, process terms, and concurrent programs provide query anchors."
+        },
+        {
+          "name": "Operational usefulness",
+          "score": 1,
+          "max_score": 5,
+          "explanation": "Actionable steps, diagnostics, expected results, validation, and troubleshooting details matter for support use."
+        },
+        {
+          "name": "Grounding quality",
+          "score": 1,
+          "max_score": 5,
+          "explanation": "Source filename, section names, examples, SQL snippets, and navigation cues improve answer grounding."
+        },
+        {
+          "name": "Procedure completeness",
+          "score": 2,
+          "max_score": 5,
+          "explanation": "Missing required sections reduce answer completeness."
+        },
+        {
+          "name": "SQL safety and context",
+          "score": 3,
+          "max_score": 5,
+          "explanation": "SQL should include purpose, bind parameters, risk notes, and expected output interpretation."
+        },
+        {
+          "name": "Ambiguity risk",
+          "score": 3,
+          "max_score": 5,
+          "explanation": "Clear title, module, audience, process, and specific references reduce ambiguity."
+        }
+      ],
+      "strengths": [
+        "Document content was parsed successfully."
+      ],
+      "blocking_issues": [
+        "Missing or unclear document type.",
+        "Missing required sections: Purpose, Scope, Validation"
+      ],
+      "warnings": [
+        "Document type could not be detected deterministically.",
+        "Quality score was capped because blocking issues or metadata quality problems were detected."
+      ],
+      "recommended_actions": [
+        "Add a Purpose section.",
+        "Add a Scope section.",
+        "Add a Validation section."
+      ],
+      "missing_sections": [
+        "Purpose",
+        "Scope",
+        "Validation"
+      ],
+      "score_cap_reasons": [
+        "Blocking issues detected; maximum score capped at 74.",
+        "Multiple blocking issues detected; maximum score capped at 69.",
+        "Document type is UNKNOWN; maximum score capped at 64."
+      ],
+      "final_score": 48
+    }
+  ],
+  "failures": []
+}

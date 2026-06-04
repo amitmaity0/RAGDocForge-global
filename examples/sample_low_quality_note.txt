@@ -1,0 +1,1 @@
+Journal import is broken. Check the table and rerun it. Sometimes period issue. Fix data.
