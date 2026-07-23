@@ -1,280 +1,342 @@
-# Chapter 08 --- Preparing Enterprise Documentation for AI
+# Chapter 08 — Preparing Enterprise Documentation for AI
 
-> **Enterprise Knowledge Engineering Guide**
+> **RAGDocForge Enterprise Documentation**
 
-------------------------------------------------------------------------
+---
 
 # Executive Summary
 
-The quality of an AI system depends far more on the quality of its
-knowledge than on the size of its language model.
+The effectiveness of an AI system depends far more on the quality of its knowledge than on the size of its language model.
 
-This chapter explains how to transform traditional enterprise
-documentation into **AI-ready, retrieval-optimized knowledge** that
-consistently produces accurate answers in production.
+This chapter explains how to transform traditional enterprise documentation into **AI-ready, retrieval-optimized knowledge** that consistently produces accurate, trustworthy answers in production environments.
 
-Rather than focusing on RAGDocForge itself, this chapter presents
-universal authoring practices applicable to Oracle EBS, ERP, IT
-operations, and enterprise support documentation.
+Rather than focusing specifically on RAGDocForge, this chapter presents universal knowledge engineering practices applicable to:
 
-------------------------------------------------------------------------
+- Oracle EBS
+- Enterprise Resource Planning (ERP)
+- IT Operations
+- Technical Support
+- Enterprise Knowledge Management
 
-# AI-Ready Documentation Principles
+These practices help organizations create documentation that is easier to retrieve, validate, maintain, and govern.
 
-An enterprise document should answer one business question clearly.
+---
 
-Good examples:
+# Principles of AI-Ready Documentation
 
--   How does Journal Import work?
--   Why did AutoInvoice reject a transaction?
--   How do I restart Workflow Mailer?
+An enterprise document should answer **one business question clearly**.
 
-Poor examples:
+### Good Examples
 
--   Oracle Support Notes Collection
--   Miscellaneous SQL
--   Project Documents
+- How does Journal Import work?
+- Why did AutoInvoice reject a transaction?
+- How do I restart Workflow Mailer?
+- How do I reconcile interface errors?
 
-------------------------------------------------------------------------
+### Poor Examples
 
-# Before vs After
+- Oracle Support Notes Collection
+- Miscellaneous SQL
+- Project Documents
+- Technical Reference
+
+Focused documentation produces better semantic retrieval and more accurate AI responses.
+
+---
+
+# Traditional Documentation vs. AI-Ready Documentation
 
 ## Traditional Documentation
 
-    Project_Final_v8.pdf
-    500 pages
-    Multiple business processes
-    Duplicate SQL
-    Mixed screenshots
-    No headings
+```text
+Project_Final_v8.pdf
 
-### Problems
+500 Pages
 
--   Weak retrieval
--   Tiny chunks
--   Duplicate answers
--   Missing metadata
+• Multiple business processes
+• Duplicate SQL
+• Mixed screenshots
+• No consistent headings
+• Multiple audiences
+```
 
-------------------------------------------------------------------------
+### Common Problems
+
+- Weak retrieval relevance
+- Poor semantic chunk boundaries
+- Duplicate answers
+- Missing metadata
+- Difficult maintenance
+
+---
 
 ## AI-Ready Documentation
 
-    General Ledger/
-       Overview.md
-       Journal Import.md
-       GL Interface Tables.md
-       Common Errors.md
-       Validation SQL.sql
+```text
+General Ledger/
+├── Overview.md
+├── Journal Import.md
+├── GL Interface Tables.md
+├── Common Errors.md
+└── Validation SQL.sql
+```
 
-Benefits:
+### Benefits
 
--   Better retrieval precision
--   Easier maintenance
--   Independent knowledge assets
--   Cleaner metadata
+- Higher retrieval precision
+- Easier maintenance
+- Independent knowledge assets
+- Cleaner metadata
+- Better governance
 
-------------------------------------------------------------------------
+---
 
 # Oracle EBS Example
 
-## Poor Structure
+## Poor Organization
 
-    Implementation Guide
+```text
+Implementation Guide
 
-    Chapter 1
-    Chapter 2
-    Chapter 3
-    ...
-    Chapter 27
+Chapter 1
+Chapter 2
+Chapter 3
+...
+Chapter 27
+```
 
-A single document may contain:
+A single document often contains information for:
 
--   GL
--   AP
--   AR
--   Purchasing
--   Inventory
--   SQL
--   Configuration
--   Troubleshooting
+- General Ledger (GL)
+- Accounts Payable (AP)
+- Accounts Receivable (AR)
+- Purchasing (PO)
+- Inventory (INV)
+- SQL scripts
+- Configuration
+- Troubleshooting
 
-This makes retrieval difficult.
+This structure makes semantic retrieval difficult because unrelated topics become mixed together.
 
-------------------------------------------------------------------------
+---
 
-## Recommended Structure
+## Recommended Organization
 
-    General Ledger/
+```text
+General Ledger/
 
-    Overview.md
-    Journal Import.md
-    Recurring Journals.md
-    Period Close.md
-    Interface Tables.md
-    Common Errors.md
-    Validation SQL.sql
-    FAQs.md
+├── Overview.md
+├── Journal Import.md
+├── Recurring Journals.md
+├── Period Close.md
+├── Interface Tables.md
+├── Common Errors.md
+├── Validation SQL.sql
+└── FAQs.md
+```
 
-Each document should address a single business capability.
+Each document should focus on **one business capability** or **one support topic**.
 
-------------------------------------------------------------------------
+---
 
 # Metadata Standards
 
-Every document should identify:
+Every enterprise document should include structured metadata.
 
-  Metadata           Example
-  ------------------ --------------------------
-  ERP Module         General Ledger
-  Business Process   Journal Import
-  Oracle Version     12.2.13
-  Application        Oracle EBS
-  Tables             GL_INTERFACE
-  APIs               GL_INTERFACE_CONTROL_PKG
-  Audience           Support Engineer
+| Metadata | Example |
+|----------|---------|
+| **ERP Module** | General Ledger |
+| **Business Process** | Journal Import |
+| **Oracle Version** | 12.2.13 |
+| **Application** | Oracle EBS |
+| **Database Tables** | GL_INTERFACE |
+| **APIs** | GL_INTERFACE_CONTROL_PKG |
+| **Audience** | Support Engineer |
 
-------------------------------------------------------------------------
+Rich metadata improves filtering, ranking, and contextual retrieval.
+
+---
 
 # Writing Retrieval-Friendly Procedures
 
-Preferred structure:
+Organize procedures using a consistent structure.
 
-    Purpose
+```text
+Purpose
 
-    Prerequisites
+Prerequisites
 
-    Business Context
+Business Context
 
-    Procedure
+Procedure
 
-    Validation
+Validation
 
-    Expected Results
+Expected Results
 
-    Troubleshooting
+Troubleshooting
 
-    Related SQL
+Related SQL
 
-    References
+References
+```
 
-This structure naturally produces high-quality semantic chunks.
+This organization naturally produces coherent semantic chunks that are easier for Retrieval-Augmented Generation (RAG) systems to search and retrieve.
 
-------------------------------------------------------------------------
+---
 
-# Oracle Module Examples
+# Oracle EBS Knowledge Pack Examples
 
-  Module   Example Knowledge Packs
-  -------- ---------------------------------
-  GL       Journal Import, Period Close
-  AP       Invoice Import, Payment Process
-  AR       AutoInvoice, Receipt Import
-  PO       Requisition Import
-  INV      Item Import
-  OM       Order Import
-  WIP      Job Completion
-  BOM      Bill Maintenance
+| Oracle Module | Example Knowledge Packs |
+|--------------|-------------------------|
+| **General Ledger (GL)** | Journal Import, Period Close |
+| **Accounts Payable (AP)** | Invoice Import, Payment Process |
+| **Accounts Receivable (AR)** | AutoInvoice, Receipt Import |
+| **Purchasing (PO)** | Requisition Import |
+| **Inventory (INV)** | Item Import |
+| **Order Management (OM)** | Order Import |
+| **Work in Process (WIP)** | Job Completion |
+| **Bills of Material (BOM)** | Bill Maintenance |
 
-------------------------------------------------------------------------
+Organizing documentation by functional module improves discoverability and long-term maintainability.
+
+---
 
 # SQL Authoring Guidelines
 
-Keep SQL separate from explanatory text.
+Keep SQL separate from explanatory documentation whenever possible.
 
-Good:
+### Recommended
 
-    Validation SQL.sql
+```text
+Validation SQL.sql
+```
 
-Document:
+Document the following alongside each SQL script:
 
--   Purpose
--   Expected results
--   Parameters
--   Safety considerations
+- Purpose
+- Expected Results
+- Input Parameters
+- Safety Considerations
 
-Avoid embedding lengthy SQL inside procedural documents.
+Separating SQL from procedural documentation improves readability and enables more accurate SQL intelligence analysis.
 
-------------------------------------------------------------------------
+Avoid embedding lengthy SQL scripts inside user guides or procedural documents.
+
+---
 
 # Enterprise Authoring Checklist
 
 ## Content
 
--   One topic per document
--   Clear business objective
--   Stable terminology
--   Complete procedures
--   Current Oracle version
+Ensure every document contains:
+
+- One topic per document
+- Clear business objective
+- Consistent terminology
+- Complete procedures
+- Current Oracle version
+
+---
 
 ## Structure
 
--   Logical headings
--   No duplicated sections
--   Independent chunks
--   References included
+Verify that documentation includes:
+
+- Logical heading hierarchy
+- No duplicated sections
+- Independent semantic chunks
+- References to related documentation
+
+---
 
 ## Metadata
 
--   Module
--   Business process
--   Database objects
--   APIs
--   Error codes
+Capture the following metadata whenever applicable:
 
-------------------------------------------------------------------------
+- ERP Module
+- Business Process
+- Database Objects
+- APIs
+- Error Codes
+
+Complete metadata significantly improves retrieval quality.
+
+---
 
 # Common Anti-Patterns
 
-  Anti-Pattern                    Recommended Practice
-  ------------------------------- -------------------------------
-  400-page implementation guide   Multiple focused documents
-  Mixed Oracle modules            One module per collection
-  SQL embedded everywhere         Dedicated SQL appendix
-  Screenshots only                Explain screenshots with text
-  Generic titles                  Business-specific titles
+| Anti-Pattern | Recommended Practice |
+|--------------|----------------------|
+| **400-page implementation guide** | Multiple focused documents |
+| **Mixed Oracle modules** | One module per documentation collection |
+| **SQL embedded throughout documentation** | Dedicated SQL appendix or separate SQL files |
+| **Screenshots without explanation** | Add descriptive text explaining the screenshot |
+| **Generic document titles** | Use business-specific titles |
 
-------------------------------------------------------------------------
+Avoiding these patterns results in cleaner, more maintainable knowledge assets.
 
-# Gold Standard Template
+---
 
-    Title
+# Gold Standard Document Template
 
-    Purpose
+The following structure is recommended for enterprise documentation.
 
-    Business Context
+```text
+Title
 
-    Prerequisites
+Purpose
 
-    Procedure
+Business Context
 
-    Validation
+Prerequisites
 
-    Troubleshooting
+Procedure
 
-    Related SQL
+Validation
 
-    References
+Troubleshooting
 
-    Revision History
+Related SQL
 
-------------------------------------------------------------------------
+References
+
+Revision History
+```
+
+Using a consistent template improves document quality, retrieval performance, and long-term governance.
+
+---
 
 # Key Takeaways
 
-Successful enterprise AI starts with disciplined knowledge engineering.
+Successful enterprise AI begins with disciplined knowledge engineering.
 
-Well-organized documentation:
+Well-structured documentation:
 
--   improves retrieval quality,
--   reduces hallucinations,
--   simplifies maintenance,
--   accelerates SME review,
--   and produces reusable enterprise knowledge assets.
+- Improves retrieval accuracy
+- Reduces hallucinations
+- Simplifies long-term maintenance
+- Accelerates SME review
+- Produces reusable enterprise knowledge assets
+- Enables governed AI deployments
 
-------------------------------------------------------------------------
+---
+
+# Chapter Summary
+
+Enterprise documentation was originally written for people—not AI systems.
+
+By organizing documentation around business capabilities, preserving rich metadata, separating SQL from narrative, and following consistent authoring standards, organizations can transform traditional documentation into retrieval-ready knowledge that powers reliable enterprise AI platforms.
+
+These practices are applicable regardless of the underlying RAG technology or AI model and form the foundation of effective enterprise knowledge engineering.
+
+---
 
 # Next Chapter
 
-**Chapter 09 --- Building High-Quality Knowledge Packs**
+➡️ **[Chapter 09 — Building High-Quality Knowledge Packs](09-Building-High-Quality-Knowledge-Packs.md)**
 
-Learn how to organize multiple documents into governed, versioned
-knowledge packs suitable for enterprise AI platforms.
+The next chapter explains how to organize multiple documents into governed, versioned knowledge packs that are optimized for Retrieval-Augmented Generation and ready for deployment into enterprise AI platforms.
+
+---

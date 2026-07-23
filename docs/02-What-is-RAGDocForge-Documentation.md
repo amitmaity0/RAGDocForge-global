@@ -1,63 +1,55 @@
-# Chapter 02 --- What is RAGDocForge?
+# Chapter 02 — What is RAGDocForge?
 
-> **Enterprise Documentation Series**
+> **RAGDocForge Enterprise Documentation**
 
-------------------------------------------------------------------------
+---
 
 # Executive Summary
 
-RAGDocForge is an **enterprise document engineering platform** that
-transforms unstructured business and technical documentation into
-governed, retrieval-ready knowledge packs for Retrieval-Augmented
-Generation (RAG) systems.
+**RAGDocForge** is an **enterprise document engineering platform** that transforms unstructured business and technical documentation into governed, retrieval-ready knowledge packs for Retrieval-Augmented Generation (RAG) systems.
 
-It sits between enterprise content and AI applications, ensuring that
-only validated, structured, and policy-compliant knowledge reaches
-production AI agents.
+It serves as the preparation layer between enterprise content and AI applications, ensuring that only validated, structured, and policy-compliant knowledge reaches production AI agents.
 
-------------------------------------------------------------------------
+---
 
 # The Problem
 
-Most enterprise documentation was never written for Large Language
-Models.
+Most enterprise documentation was never designed for Large Language Models (LLMs).
 
-Typical documents contain:
+Typical enterprise documents often contain:
 
--   Mixed formatting
--   Duplicated content
--   Weak metadata
--   Missing context
--   Embedded SQL and code
--   Inconsistent terminology
--   Large sections unsuitable for semantic retrieval
+- Mixed formatting
+- Duplicated content
+- Weak or missing metadata
+- Missing business context
+- Embedded SQL and source code
+- Inconsistent terminology
+- Large sections unsuitable for semantic retrieval
 
-Without preparation, these issues reduce retrieval quality and increase
-AI hallucinations.
+Without proper preparation, these issues reduce retrieval quality, lower answer accuracy, and increase the likelihood of AI hallucinations.
 
-------------------------------------------------------------------------
+---
 
 # The RAGDocForge Solution
 
-Instead of sending raw documents directly into embeddings or a vector
-database, RAGDocForge introduces a governed preparation pipeline.
+Instead of sending raw documents directly into an embedding model or vector database, RAGDocForge introduces a governed preparation pipeline.
 
-``` mermaid
+```mermaid
 flowchart LR
-A[Enterprise Documents]
--->B[Deterministic Parsing]
--->C[Metadata Enrichment]
--->D[Chunk Optimization]
--->E[Retrieval Validation]
--->F[Quality Gates]
--->G[Approved Knowledge Pack]
+    A[Enterprise Documents]
+        --> B[Deterministic Parsing]
+        --> C[Metadata Enrichment]
+        --> D[Chunk Optimization]
+        --> E[Retrieval Validation]
+        --> F[Quality Gates]
+        --> G[Approved Knowledge Pack]
 ```
 
-------------------------------------------------------------------------
+---
 
 # Position in the Enterprise AI Stack
 
-``` text
+```text
 Enterprise Documentation
           │
           ▼
@@ -73,127 +65,142 @@ Enterprise Documentation
  Vector Store + AI Agents
 ```
 
-RAGDocForge is **not** the chatbot, vector database, orchestration
-engine, or ERP runtime. It is the governed knowledge preparation layer.
+RAGDocForge is **not**:
 
-------------------------------------------------------------------------
+- A chatbot
+- A vector database
+- An orchestration engine
+- An ERP runtime
+
+Its responsibility is to prepare trusted, governed knowledge assets for downstream AI systems.
+
+---
 
 # Core Responsibilities
 
-  Responsibility              Purpose
-  --------------------------- -------------------------------------------
-  Deterministic parsing       Normalize source documents
-  Metadata extraction         Capture ERP-specific context
-  SQL & PL/SQL intelligence   Identify and classify database artifacts
-  Chunk generation            Produce retrieval-optimized chunks
-  Retrieval QA                Measure search effectiveness
-  Quality Gates               Enforce production policies
-  Knowledge Pack export       Produce standardized deployment artifacts
+| Responsibility | Purpose |
+|---------------|---------|
+| **Deterministic Parsing** | Normalize source documents into structured content |
+| **Metadata Extraction** | Capture ERP and domain-specific metadata |
+| **SQL & PL/SQL Intelligence** | Detect, classify, and enrich database artifacts |
+| **Chunk Generation** | Produce retrieval-optimized semantic chunks |
+| **Retrieval QA** | Measure and validate retrieval effectiveness |
+| **Quality Gates** | Enforce production governance policies |
+| **Knowledge Pack Export** | Generate standardized deployment artifacts |
 
-------------------------------------------------------------------------
+---
 
 # Key Design Principles
 
 ## Deterministic First
 
-Core processing does not depend on an LLM. Identical inputs should
-produce identical outputs.
+Core processing does **not** depend on an LLM. Identical inputs should always produce identical outputs.
+
+---
 
 ## LLM as an Advisor
 
-When enabled, LLMs provide suggestions rather than authoritative
-results. Human review and deterministic analysis remain the source of
-truth.
+When enabled, LLMs provide recommendations rather than authoritative results. Human review and deterministic analysis remain the source of truth.
+
+---
 
 ## Governance by Default
 
-Every exported knowledge pack should be reviewable, traceable, and
-reproducible.
+Every exported knowledge pack should be:
 
-------------------------------------------------------------------------
+- Reviewable
+- Traceable
+- Reproducible
+- Policy compliant
+
+---
 
 # Knowledge Pack Lifecycle
 
-``` mermaid
+```mermaid
 flowchart TD
-Upload-->Analyze
-Analyze-->Review
-Review-->Validate
-Validate-->Approve
-Approve-->Export
-Export-->Platform
+    Upload --> Analyze
+    Analyze --> Review
+    Review --> Validate
+    Validate --> Approve
+    Approve --> Export
+    Export --> Platform
 ```
 
-------------------------------------------------------------------------
+---
 
 # Intended Users
 
--   Enterprise AI Architects
--   Oracle EBS Support Engineers
--   Knowledge Engineers
--   Technical Writers
--   DevOps Teams
--   Platform Engineers
+RAGDocForge is designed for:
 
-------------------------------------------------------------------------
+- Enterprise AI Architects
+- Oracle EBS Support Engineers
+- Knowledge Engineers
+- Technical Writers
+- DevOps Teams
+- Platform Engineers
+
+---
 
 # Typical Use Cases
 
-### Oracle EBS Knowledge Engineering
+## Oracle EBS Knowledge Engineering
 
-Convert implementation guides, troubleshooting manuals, SQL scripts, and
-support procedures into governed knowledge packs.
+Convert implementation guides, troubleshooting manuals, SQL scripts, and operational procedures into governed knowledge packs optimized for enterprise AI.
 
-### Enterprise Support
+---
 
-Prepare validated documentation for AI support copilots.
+## Enterprise Support
 
-### Agentic AI Platforms
+Prepare validated documentation for AI-powered support assistants and engineering copilots.
 
-Supply trusted knowledge to multi-agent orchestration systems.
+---
 
-------------------------------------------------------------------------
+## Agentic AI Platforms
 
-# What RAGDocForge Does Not Do
+Provide trusted knowledge assets to multi-agent orchestration systems and enterprise reasoning platforms.
 
-It intentionally does **not**:
+---
 
--   Execute ERP transactions
--   Modify production databases
--   Replace vector databases
--   Replace AI orchestration frameworks
--   Serve as an end-user chatbot
+# What RAGDocForge Does **Not** Do
 
-Its responsibility ends with producing high-quality, validated knowledge
-assets.
+RAGDocForge intentionally does **not**:
 
-------------------------------------------------------------------------
+- Execute ERP transactions
+- Modify production databases
+- Replace vector databases
+- Replace AI orchestration frameworks
+- Serve as an end-user chatbot
+
+Its responsibility ends with producing high-quality, validated, deployment-ready knowledge assets.
+
+---
 
 # Business Value
 
-Organizations adopting RAGDocForge gain:
+Organizations adopting RAGDocForge benefit from:
 
--   Higher retrieval precision
--   Reduced hallucination risk
--   Standardized knowledge preparation
--   Repeatable release processes
--   Auditable AI knowledge governance
+- Higher retrieval precision
+- Reduced hallucination risk
+- Standardized knowledge preparation
+- Repeatable release processes
+- Auditable AI governance
+- Improved enterprise knowledge quality
 
-------------------------------------------------------------------------
+---
 
 # Chapter Summary
 
-RAGDocForge transforms enterprise documentation into trusted AI
-knowledge through deterministic processing, governance, and validation.
-It provides the missing preparation layer between raw documents and
-production AI systems.
+RAGDocForge transforms enterprise documentation into trusted AI knowledge through deterministic processing, governance, validation, and quality assurance.
 
-------------------------------------------------------------------------
+It provides the missing preparation layer between raw enterprise documentation and production-grade AI systems.
 
-## Next Chapter
+---
 
-**Chapter 03 --- Why RAGDocForge?**
+# Next Chapter
 
-Explore the shortcomings of traditional RAG pipelines, enterprise
-governance requirements, and the architectural motivations behind the
-platform.
+➡️ **[Chapter 03 — Why RAGDocForge?](03-Why-RAGDocForge-Documentation.md)**
+
+The next chapter explores the limitations of traditional RAG pipelines, enterprise governance requirements, and the architectural motivations that led to the design of RAGDocForge.
+
+---

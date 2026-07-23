@@ -1,165 +1,256 @@
-# Chapter 07 --- Task-Based User Guide
+# Chapter 07 — Task-Based User Guide
 
-> **Enterprise Documentation Series**
+> **RAGDocForge Enterprise Documentation**
 
-This chapter teaches users how to accomplish common tasks in
-RAGDocForge. Rather than describing every screen, it follows real
-enterprise workflows.
+---
 
-------------------------------------------------------------------------
+# Executive Summary
+
+This chapter provides practical, task-oriented guidance for using RAGDocForge in real enterprise environments.
+
+Instead of explaining every screen and option, it walks through common workflows that Knowledge Engineers, Oracle EBS Support Engineers, and Enterprise AI teams perform when preparing production-ready knowledge packs.
+
+---
 
 # Typical User Journey
 
-``` text
-Prepare Documents
-      ↓
-Upload Files
-      ↓
-Analyze
-      ↓
-Review Findings
-      ↓
-Run Quality Gates
-      ↓
-Approve
-      ↓
-Export Knowledge Pack
+```text
+Prepare Enterprise Documents
+            │
+            ▼
+        Upload Files
+            │
+            ▼
+          Analyze
+            │
+            ▼
+      Review Findings
+            │
+            ▼
+     Run Quality Gates
+            │
+            ▼
+          Approve
+            │
+            ▼
+   Export Knowledge Pack
 ```
 
-------------------------------------------------------------------------
+This represents the recommended end-to-end workflow for producing governed knowledge assets.
 
-# Scenario 1 --- Analyze an Oracle GL Interface Guide
+---
+
+# Scenario 1 — Analyze an Oracle General Ledger Interface Guide
 
 ## Objective
 
-Prepare General Ledger implementation documentation for an ERP Agentic
-AI Platform.
+Prepare Oracle General Ledger implementation documentation for deployment into an ERP Agentic AI Platform.
 
-### Recommended Inputs
+---
 
-  Document                          Required
-  ------------------------------- -------------
-  Functional Design                    ✅
-  Technical Design                     ✅
-  Interface Table Documentation        ✅
-  SQL Validation Scripts           Recommended
-  Troubleshooting Guide            Recommended
-  Error Catalog                    Recommended
+## Recommended Inputs
 
-### Steps
+| Document | Recommended |
+|----------|:-----------:|
+| Functional Design | ✅ |
+| Technical Design | ✅ |
+| Interface Table Documentation | ✅ |
+| SQL Validation Scripts | Recommended |
+| Troubleshooting Guide | Recommended |
+| Error Catalog | Recommended |
 
-1.  Open the Gradio application.
-2.  Upload all related documents together.
-3.  Select:
-    -   ERP Module: **General Ledger**
-    -   Business Process: **Journal Import**
-    -   Quality Profile: **Standard**
-4.  Click **Analyze**.
-5.  Review metadata, retrieval QA, SQL Intelligence, and Quality Gates.
-6.  Export the approved knowledge pack.
+---
 
-### Expected Outputs
+## Step-by-Step Workflow
 
--   Structured Markdown
--   Retrieval-ready chunks
--   ERP metadata
--   SQL intelligence reports
--   Quality reports
--   Platform integration package
+### Step 1 — Open the Gradio Application
 
-------------------------------------------------------------------------
+Launch the RAGDocForge Gradio interface.
 
-# Scenario 2 --- Review SQL Intelligence
+---
 
-Use SQL Intelligence to verify database artifacts.
+### Step 2 — Upload Related Documents
 
-Review for:
+Upload all documents related to the same business process together.
 
--   Table names
--   Packages
--   Procedures
--   Views
--   Bind variables
--   Safety classifications
+For this example:
+
+- Functional Design
+- Technical Design
+- Interface Table Documentation
+- SQL Validation Scripts
+- Troubleshooting Guide
+- Error Catalog
+
+---
+
+### Step 3 — Configure Analysis
+
+Select the appropriate configuration:
+
+| Setting | Value |
+|---------|-------|
+| **ERP Module** | General Ledger |
+| **Business Process** | Journal Import |
+| **Quality Profile** | Standard |
+
+---
+
+### Step 4 — Start Analysis
+
+Click **Analyze** to begin deterministic document processing.
+
+RAGDocForge will automatically perform:
+
+- Document parsing
+- Metadata extraction
+- Chunk engineering
+- SQL & PL/SQL analysis
+- Retrieval Quality Assurance
+- Quality Gate evaluation
+
+---
+
+### Step 5 — Review Results
+
+Review the generated reports before approving the knowledge pack.
+
+Pay particular attention to:
+
+- Metadata completeness
+- Retrieval QA metrics
+- SQL Intelligence findings
+- Quality Gate results
+- Validation warnings
+
+---
+
+### Step 6 — Export the Knowledge Pack
+
+Once all reviews have been completed and Quality Gates have passed, export the approved knowledge pack for deployment.
+
+---
+
+## Expected Outputs
+
+Successful analysis produces:
+
+- Structured Markdown documentation
+- Retrieval-ready semantic chunks
+- ERP metadata
+- SQL & PL/SQL intelligence reports
+- Quality assessment reports
+- Platform integration package
+
+---
+
+# Scenario 2 — Review SQL & PL/SQL Intelligence
+
+SQL Intelligence helps validate database-related artifacts discovered during document analysis.
+
+Review the extracted information for:
+
+- Tables
+- Packages
+- Procedures
+- Functions
+- Views
+- Bind variables
+- SQL safety classifications
+
+---
 
 ## Best Practice
 
-Treat SQL findings as engineering evidence requiring SME review before
-release.
+Treat SQL Intelligence findings as engineering evidence.
 
-------------------------------------------------------------------------
+Every SQL-related artifact should be reviewed and approved by a Subject Matter Expert (SME) before release.
 
-# Scenario 3 --- Run Quality Gates
+---
 
-Quality Gates determine whether a knowledge pack is ready for
-production.
+# Scenario 3 — Run Quality Gates
 
-Recommended workflow:
+Quality Gates determine whether a knowledge pack satisfies the organization's production policies.
 
-1.  Review warnings.
-2.  Correct documentation issues.
-3.  Re-run validation.
-4.  Approve only when policy requirements are satisfied.
+### Recommended Workflow
 
-------------------------------------------------------------------------
+1. Review all warnings and validation results.
+2. Correct documentation or metadata issues.
+3. Re-run validation.
+4. Approve only after all required policies have been satisfied.
 
-# Scenario 4 --- Export an Approved Knowledge Pack
+Never bypass Quality Gates for production releases.
 
-Before exporting, verify:
+---
 
-  Check                   Status
-  ----------------------- --------
-  Metadata complete       ✓
-  Retrieval QA reviewed   ✓
-  Human review complete   ✓
-  Quality Gate passed     ✓
+# Scenario 4 — Export an Approved Knowledge Pack
 
-Export only approved packs into downstream AI platforms.
+Before exporting, verify the following checklist.
 
-------------------------------------------------------------------------
+| Validation Check | Status |
+|-----------------|:------:|
+| Metadata Complete | ✅ |
+| Retrieval QA Reviewed | ✅ |
+| Human Review Complete | ✅ |
+| Quality Gates Passed | ✅ |
+
+Only approved knowledge packs should be deployed into downstream AI platforms.
+
+---
 
 # Common Mistakes
 
-  -----------------------------------------------------------------------
-  Mistake                    Better Practice
-  -------------------------- --------------------------------------------
-  Upload unrelated projects  Keep one business process per analysis
-  together                   
+| Mistake | Better Practice |
+|----------|----------------|
+| Upload unrelated projects together | Analyze one business process at a time |
+| Mix current and obsolete documentation | Use only authoritative, current documentation |
+| Ignore retrieval warnings | Improve document quality before deployment |
+| Skip SME review | Require formal approval for production knowledge packs |
 
-  Mix functional and         Use current, authoritative sources
-  obsolete documentation     
-
-  Ignore retrieval warnings  Improve document structure first
-
-  Skip SME review            Require approval for production packs
-  -----------------------------------------------------------------------
-
-------------------------------------------------------------------------
+---
 
 # Enterprise Tips
 
--   Analyze documentation by Oracle module.
--   Keep implementation guides, SOPs, and SQL scripts organized.
--   Version approved knowledge packs alongside application releases.
--   Maintain a baseline for critical business processes such as Journal
-    Import or AutoInvoice.
+The following practices consistently produce higher-quality knowledge packs:
 
-------------------------------------------------------------------------
+- Analyze documentation by Oracle EBS module.
+- Organize implementation guides, SOPs, and SQL scripts separately.
+- Version approved knowledge packs alongside application releases.
+- Maintain retrieval baselines for critical business processes such as:
+  - Journal Import
+  - AutoInvoice
+  - Order Import
+  - Inventory Transactions
+
+These practices improve long-term maintainability and retrieval consistency.
+
+---
 
 # Daily Workflow Checklist
 
--   Environment ready
--   Documents organized
--   Analysis completed
--   Findings reviewed
--   Quality Gates passed
--   Knowledge Pack exported
+Before completing your work for the day, confirm that:
 
-------------------------------------------------------------------------
+- ✅ Environment is ready
+- ✅ Documents are organized
+- ✅ Analysis has completed successfully
+- ✅ Findings have been reviewed
+- ✅ Quality Gates have passed
+- ✅ Approved knowledge pack has been exported
+
+---
+
+# Chapter Summary
+
+RAGDocForge is designed around practical enterprise workflows rather than isolated features.
+
+By following a consistent process of document analysis, metadata review, SQL validation, Retrieval QA, Quality Gates, and human approval, organizations can produce trusted knowledge packs that are ready for deployment into enterprise AI platforms.
+
+---
 
 # Next Chapter
 
-**Chapter 08 --- Preparing Enterprise Documentation for AI**
+➡️ **[Chapter 08 — Preparing Enterprise Documentation for AI](08-Preparing-Enterprise-Documentation-for-AI.md)**
 
-Learn how to transform Oracle EBS implementation guides, SOPs, runbooks,
-and legacy documentation into high-quality retrieval-ready knowledge.
+The next chapter explains how to transform Oracle EBS implementation guides, standard operating procedures (SOPs), runbooks, and legacy enterprise documentation into high-quality, retrieval-ready knowledge optimized for AI systems.
+
+---
