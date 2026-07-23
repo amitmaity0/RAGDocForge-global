@@ -1,156 +1,268 @@
 ---
-title: RAGDocForge
-emoji: 📄
+app_file: app.py
 colorFrom: blue
 colorTo: indigo
+emoji: 📄
+license: apache-2.0
+pinned: false
 sdk: gradio
 sdk_version: 5.0.0
-app_file: app.py
-pinned: false
-license: apache-2.0
+title: RAGDocForge
 ---
 
-# RAGDocForge
+::: {align="center"}
+# 📄 RAGDocForge
 
-RAGDocForge is a lightweight Gradio application for preparing enterprise documents for high-quality RAG ingestion. It focuses on deterministic parsing, Oracle EBS metadata extraction, RAG-readiness scoring, structured markdown conversion, JSONL chunk generation, and exportable review artifacts.
+### Enterprise Document Preparation Toolkit for Retrieval-Augmented Generation (RAG)
 
-Supported content includes SOPs, SQL, PL/SQL, Oracle EBS notes, functional designs, technical designs, troubleshooting notes, and FAQs.
+Transform enterprise documents into **production-ready knowledge packs**
+with deterministic parsing, Oracle EBS intelligence, quality scoring,
+retrieval validation, and governed export.
 
-## Features
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![Gradio](https://img.shields.io/badge/Gradio-5.x-orange)
+![License](https://img.shields.io/badge/License-Apache%202.0-green)
+![RAG](https://img.shields.io/badge/RAG-Knowledge%20Pack-indigo)
+:::
 
-- Multi-file upload and bundled sample-file workflow.
-- PDF, DOCX, TXT, MD, SQL, and PL/SQL-style parsing.
-- Oracle EBS metadata extraction with hardened object filtering.
-- SQL and PL/SQL object detection, including comma-separated `FROM` clauses and strict function signatures.
-- Split error metadata with `error_codes` and `error_context_lines`.
-- Deterministic RAG-readiness scoring with raw score, final capped score, readiness level, and cap reasons.
-- RAG-ready markdown conversion.
-- JSONL chunk generation with separate `metadata.doc_level` and `metadata.chunk_level`.
-- Optional LLM qualitative analysis through `disabled`, `mock`, `ollama`, or `openai_compatible` providers.
-- Hugging Face Spaces-ready Gradio UI with public-demo mode.
-- ZIP export with manifest, sidecar metadata, quality report, chunks, suggested sections, and output README.
+------------------------------------------------------------------------
 
-## Privacy
+# Overview
 
-Do not upload confidential documents to a public Space. Use local/private deployment for sensitive enterprise content.
+RAGDocForge is an enterprise-grade document preparation toolkit that
+converts business and technical documentation into structured,
+retrieval-optimized knowledge assets for Retrieval-Augmented Generation
+(RAG).
 
-When LLM analysis is enabled, document content may be sent to the selected provider. Use Ollama for local/private processing, or keep the provider set to `disabled`/`mock` for public demos.
+Unlike traditional document converters, RAGDocForge performs
+deterministic parsing, Oracle EBS-aware metadata extraction, SQL &
+PL/SQL intelligence, document quality analysis, chunk optimization, and
+governed knowledge-pack generation.
 
-## Local Run
+It is designed for enterprise support organizations, solution
+architects, and Agentic AI platforms that require trustworthy,
+repeatable, and auditable knowledge preparation pipelines.
 
-```bash
+------------------------------------------------------------------------
+
+# ✨ Key Features
+
+-   📄 Multi-format document ingestion
+-   🏛 Oracle EBS metadata extraction
+-   🧠 SQL & PL/SQL intelligence
+-   📊 RAG Readiness scoring
+-   🧩 Intelligent chunk generation
+-   📝 Markdown normalization
+-   🤖 Optional LLM-assisted qualitative review
+-   🔍 Retrieval quality simulation
+-   📦 Governed Knowledge Pack export
+-   ✅ Quality Gates & CI validation
+-   🌐 Hugging Face Spaces ready
+
+------------------------------------------------------------------------
+
+# Supported File Types
+
+  Format     Supported
+  ---------- -----------
+  PDF        ✅
+  DOCX       ✅
+  Markdown   ✅
+  TXT        ✅
+  SQL        ✅
+  PL/SQL     ✅
+
+------------------------------------------------------------------------
+
+# Architecture
+
+``` mermaid
+flowchart LR
+
+A[Enterprise Documents]
+-->B[Deterministic Parsing]
+-->C[Metadata Extraction]
+-->D[RAG Readiness]
+-->E[Chunk Generation]
+-->F[Knowledge Pack]
+-->G[Quality Gates]
+-->H[Platform Export]
+```
+
+------------------------------------------------------------------------
+
+# Quick Start
+
+## Clone Repository
+
+``` bash
+git clone https://github.com/<your-org>/RAGDocForge.git
+cd RAGDocForge
+```
+
+## Create Virtual Environment
+
+``` bash
 python -m venv .venv
 source .venv/bin/activate
+```
+
+## Install
+
+``` bash
 pip install -r requirements.txt
+```
+
+## Launch
+
+``` bash
 python app.py
 ```
 
-Run tests and Spaces checks:
+------------------------------------------------------------------------
 
-```bash
+# Run Tests
+
+``` bash
 python -m pytest -q
 python scripts/verify_spaces_ready.py
 ```
 
-## Hugging Face Spaces Deployment
+------------------------------------------------------------------------
 
-1. Create a new Hugging Face Space.
-2. Choose the Gradio SDK.
-3. Upload the repository files.
-4. Set `RAGDOCFORGE_PUBLIC_DEMO_MODE=true` in Space variables.
-5. Keep `RAGDOCFORGE_LLM_PROVIDER=disabled` or `mock` for public demos.
+# Configuration
 
-The root `app.py` imports `demo` from `ragdocforge.app`, so the app works with both `python app.py` and Hugging Face Spaces.
+  -----------------------------------------------------------------------
+  Environment Variable                         Description
+  -------------------------------------------- --------------------------
+  `RAGDOCFORGE_LLM_PROVIDER`                   disabled, mock, ollama,
+                                               openai_compatible
 
-## Public Demo Mode
+  `RAGDOCFORGE_PUBLIC_DEMO_MODE`               Enable public demo
+                                               safeguards
 
-Enable:
+  `RAGDOCFORGE_OLLAMA_BASE_URL`                Local Ollama endpoint
 
-```bash
+  `RAGDOCFORGE_OLLAMA_MODEL`                   Local model
+
+  `RAGDOCFORGE_OPENAI_BASE_URL`                OpenAI-compatible endpoint
+
+  `RAGDOCFORGE_OPENAI_MODEL`                   Remote model
+  -----------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+# Privacy
+
+> **Never upload confidential enterprise documents to a public
+> deployment.**
+
+For sensitive workloads, deploy locally or within a private environment.
+When LLM-assisted analysis is enabled, document content may be
+transmitted to the configured provider.
+
+------------------------------------------------------------------------
+
+# Sample Workflow
+
+1.  Upload one or more documents.
+2.  Extract Oracle EBS metadata.
+3.  Generate normalized Markdown.
+4.  Produce retrieval-ready JSONL chunks.
+5.  Evaluate RAG readiness.
+6.  Export a governed Knowledge Pack.
+
+------------------------------------------------------------------------
+
+# Output Structure
+
+``` text
+ragdocforge_outputs/
+├── markdown/
+├── chunks.jsonl
+├── metadata_sidecar.json
+├── quality_report.json
+├── llm_analysis_report.json
+├── manifest.json
+├── README_OUTPUTS.md
+└── suggested_sections.md
+```
+
+------------------------------------------------------------------------
+
+# Public Demo Mode
+
+``` bash
 RAGDOCFORGE_PUBLIC_DEMO_MODE=true
 ```
 
-Public demo mode:
+Features include:
 
-- Shows a public-demo badge and prominent privacy warning.
-- Defaults the LLM provider to a safe public mode.
-- Hides the API key field by default.
-- Enforces upload count and per-file size limits.
-- Avoids persistent uploaded document storage.
-- Keeps raw document text, prompts, and API keys out of logs.
+-   Privacy banner
+-   Safe default LLM provider
+-   Hidden API keys
+-   Upload limits
+-   No persistent document storage
+-   Sanitized logging
 
-## Provider Configuration
+------------------------------------------------------------------------
+## 📚 Documentation
 
-Copy `.env.example` to `.env` for local/private use.
+Comprehensive documentation is available in the **docs** directory.
 
-```bash
-RAGDOCFORGE_LLM_PROVIDER=disabled
-RAGDOCFORGE_LLM_PROVIDER=mock
-RAGDOCFORGE_LLM_PROVIDER=ollama
-RAGDOCFORGE_LLM_PROVIDER=openai_compatible
-```
+➡️ **[Open the Documentation Home](docs/README.md)**
 
-Ollama:
+The documentation covers:
 
-```bash
-RAGDOCFORGE_OLLAMA_BASE_URL=http://localhost:11434
-RAGDOCFORGE_OLLAMA_MODEL=qwen2.5:7b
-```
+- Getting Started
+- Enterprise Workflows
+- Oracle EBS Examples
+- AI-Ready Documentation
+- Knowledge Pack Engineering
+- Production Best Practices
+- Governance
+------------------------------------------------------------------------
 
-OpenAI-compatible endpoint:
+# Current Limitations
 
-```bash
-RAGDOCFORGE_OPENAI_BASE_URL=https://api.openai.com/v1
-RAGDOCFORGE_OPENAI_API_KEY=
-RAGDOCFORGE_OPENAI_MODEL=gpt-4.1-mini
-```
+-   OCR not yet supported
+-   No embedding generation
+-   No vector database ingestion
+-   No chatbot interface
+-   PDF quality depends on embedded text
+-   Human review recommended for LLM suggestions
 
-## Sample Workflow
+------------------------------------------------------------------------
 
-The UI includes:
+# Roadmap
 
-- Load Sample SOP
-- Load Sample SQL
-- Load Sample PL/SQL
-- Load All Samples
+-   [x] Deterministic parsing
+-   [x] Oracle EBS intelligence
+-   [x] SQL & PL/SQL analysis
+-   [x] Quality Gates
+-   [x] Knowledge Pack export
+-   [ ] OCR support
+-   [ ] Embedding generation
+-   [ ] Vector database connectors
+-   [ ] Enterprise REST API
+-   [ ] Knowledge Pack Registry
 
-Bundled examples live in `examples/`:
+------------------------------------------------------------------------
 
-- `sample_gl_journal_import_sop.md`
-- `sample_gl_diagnostic_sql.sql`
-- `sample_custom_plsql_package.pks`
-- `sample_low_quality_note.txt`
+# Contributing
 
-Reference artifacts live in `demo_outputs/`.
+Contributions, issues, and feature requests are welcome. Please open an
+issue before submitting significant changes.
 
-## ZIP Output Layout
+------------------------------------------------------------------------
 
-Downloaded ZIP files use:
+# License
 
-```text
-ragdocforge_outputs/
-  markdown/
-  chunks.jsonl
-  quality_report.json
-  metadata_sidecar.json
-  llm_analysis_report.json
-  suggested_sections.md
-  output_summary.md
-  manifest.json
-  README_OUTPUTS.md
-```
+Licensed under the Apache License 2.0.
 
-`chunks.jsonl` is ready for later RAG ingestion. It stores compact document-level references in `metadata.doc_level` and local chunk retrieval metadata in `metadata.chunk_level`.
+------------------------------------------------------------------------
 
-## Limitations
-
-- No OCR in the current slice.
-- No vector DB ingestion yet.
-- No embeddings yet.
-- No RAG chatbot yet.
-- PDF extraction quality depends on embedded text.
-- LLM suggestions should be reviewed by a human.
-
-## License
-
-Apache-2.0
+::: {align="center"}
+**Built for Enterprise AI • Oracle EBS • Retrieval-Augmented
+Generation**
+:::
